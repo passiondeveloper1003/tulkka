@@ -100,8 +100,6 @@ class SubscriptionModal extends Component
         $this->doClose();
     }
 
-
-
     public function calculateRenewDate()
     {
         $plan = $this->selectedPlan;
@@ -389,7 +387,7 @@ class SubscriptionModal extends Component
           'expiryDate' => 'required',
           'cardNumber' => 'required',
           'cvv' => 'required'
-  ]);
+        ]);
 
         $this->showLoading = true;
         try {
@@ -448,15 +446,13 @@ class SubscriptionModal extends Component
         $this->calculateTotalPrice();
     }
 
-
-
-
-
       public function render()
       {
           $this->authUser = auth()->user();
           $this->calculateTotalPrice();
           $this->generalSettings =  getGeneralSettings();
+          
           return view('livewire.subscription-modal');
+          
       }
 }

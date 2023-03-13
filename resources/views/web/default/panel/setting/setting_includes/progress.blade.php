@@ -52,7 +52,6 @@
 @endphp
 
 <div class="webinar-progress ">
-
     <!-- @foreach ($progressSteps as $key => $step)
         @if (!$user->isTeacher() && ($key == 6 || $key == 7))
             @continue
@@ -67,22 +66,59 @@
             </div>
         </a>
     @endforeach -->
-    <div class="row default-row">
-        <div class="col-12 col-md-4">
-            <div class="bg-white d-flex justify-content-center flex-column br-5 settings-header-card pl-45">
-                <h3 class="font-18 font-weight-normal text-primary">{{ trans('update.settings_welcome_head') }}</h3>
-                <p>{{ trans('update.settings_welcome_desc') }}</p>
-            </div>
-        </div>
-        <div class="col-6 col-md-4">
-            <div class="bg-white d-flex align-items-center justify-content-center flex-column br-5 settings-header-card">
-                <h3 class="font-18 font-weight-normal text-primary">{{ trans('update.profile') }}</h3>
-            </div>
-        </div>
-        <div class="col-6 col-md-4">
-            <div class="bg-white d-flex align-items-center justify-content-center flex-column br-5 settings-header-card">
-                <h3 class="font-18 font-weight-normal text-primary">{{ trans('update.biography') }}</h3>
-            </div>
-        </div>
-    </div>
+    <!-- <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Tab 1</a></li>
+        <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Tab 2</a></li>
+    </ul> -->
+    
+    @if (!$user->isTeacher())
+        <ul class="nav nav-tabs setting-tabs row default-row" role="tablist">            
+            <li role="presentation" class="col-12 col-md-4">
+                <a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">
+                    <div class="bg-white d-flex justify-content-center flex-column br-5 settings-header-card pl-45">
+                        <h3 class="font-18 font-weight-normal text-primary">{{ trans('update.settings_welcome_head') }}</h3>
+                        <p>{{ trans('update.settings_welcome_desc') }}</p>
+                    </div>
+                </a>
+            </li>
+            <li role="presentation" class="col-12 col-md-4">
+                <a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">
+                    <div class="bg-white d-flex align-items-center justify-content-center flex-column br-5 settings-header-card">
+                        <h3 class="font-18 font-weight-normal text-primary">{{ trans('update.skills') }}</h3>
+                    </div>
+                </a>
+            </li>
+            <li role="presentation" class="col-12 col-md-4">
+                <a href="#tab3" aria-controls="tab2" role="tab" data-toggle="tab">
+                    <div class="bg-white d-flex align-items-center justify-content-center flex-column br-5 settings-header-card">
+                        <h3 class="font-18 font-weight-normal text-primary">{{ trans('update.biography') }}</h3>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    @else
+        <ul class="nav nav-tabs setting-tabs row default-row" role="tablist">            
+            <li role="presentation" class="col-12 col-md-4">
+                <a href="#tab1" aria-controls="tab2" role="tab" data-toggle="tab">
+                    <div class="bg-white d-flex align-items-center justify-content-center flex-column br-5 settings-header-card">
+                        <h3 class="font-18 font-weight-normal text-primary">{{ trans('update.profile') }}</h3>
+                    </div>
+                </a>
+            </li>
+            <li role="presentation" class="col-12 col-md-4">
+                <a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">
+                    <div class="bg-white d-flex align-items-center justify-content-center flex-column br-5 settings-header-card">
+                        <h3 class="font-18 font-weight-normal text-primary">{{ trans('update.skills') }}</h3>
+                    </div>
+                </a>
+            </li>
+            <li role="presentation" class="col-12 col-md-4">
+                <a href="#tab3" aria-controls="tab2" role="tab" data-toggle="tab">
+                    <div class="bg-white d-flex align-items-center justify-content-center flex-column br-5 settings-header-card">
+                        <h3 class="font-18 font-weight-normal text-primary">{{ trans('update.biography') }}</h3>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    @endif
 </div>

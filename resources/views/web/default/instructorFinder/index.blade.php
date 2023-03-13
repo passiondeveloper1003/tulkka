@@ -42,7 +42,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-lg-4">
+                    <div class="col-12 col-lg-4 order-first order-md-1" >
                         <div class="shadow-lg">
                             @include('web.default.instructorFinder.components.filters')
                             

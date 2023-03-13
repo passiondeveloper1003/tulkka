@@ -1,4 +1,4 @@
-<div class="mt-30 mt-md-45 px-35 py-30 rounded-sm filters-container">
+<div class="mt-30 mt-md-45 px-10 px-md-35 py-30 rounded-sm filters-container">
     <h3 class="category-filter-title font-20 font-weight-bold text-dark-blue">{{ trans('update.categories') }}</h3>
 
     {{-- <div class="form-group mt-20">
@@ -40,6 +40,7 @@
                 {{ trans('update.expert') }}</option>
         </select>
     </div>
+
     <div class="form-group mt-20">
         <label for="goals">{{ trans('update.goals') }}</label>
 

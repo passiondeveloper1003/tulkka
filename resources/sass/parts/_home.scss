@@ -304,8 +304,9 @@
   min-height: 20px;
 
   svg {
-    margin-right: 3px;
     color: $gray;
+    width: 8px;
+    height: 8px;
 
     &.active {
       color: #ffc600;
@@ -792,6 +793,10 @@
     width: auto;
     top: 0;
     max-width: 50%;
+    .rtl & {
+      right: auto;
+      left: 0;
+    }
   }
 }
 

@@ -46,7 +46,7 @@ class InstructorFinderController extends Controller
         $query = $query->addSelect(DB::raw('ST_AsText(location) as userLocation'));
 
         $instructors = deepClone($query)->paginate(6);
-
+        
         foreach ($instructors as $instructor) {
             $instructor->location = $instructor->userLocation;
         }
@@ -70,13 +70,14 @@ class InstructorFinderController extends Controller
         $pageTitle = !empty($seoSettings['title']) ? $seoSettings['title'] : trans('home.instructors');
         $pageDescription = !empty($seoSettings['description']) ? $seoSettings['description'] : trans('home.instructors');
         $pageRobot = getPageRobot('instructor_finder');
-
+        
         $data = [
             'pageTitle' => $pageTitle,
             'pageDescription' => $pageDescription,
             'pageRobot' => $pageRobot,
             'mapUsers' => $mapUsers,
             'instructors' => $instructors,
+            'authUser' => auth()->user(),
         ];
 
         $locationData = $this->getLocationData($request);
@@ -117,6 +118,7 @@ class InstructorFinderController extends Controller
         $availableForMeetings = $request->get('available_for_meetings', null);
         $hasFreeMeetings = $request->get('free_meetings', null);
         $withDiscount = $request->get('discount', null);
+
 
         if (empty($request->get('role', null))) {
             $role = [Role::$organization, Role::$teacher];

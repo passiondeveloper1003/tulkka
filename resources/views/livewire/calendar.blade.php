@@ -105,10 +105,13 @@
                     @endif
                 </button> -->
                     @if (isset($authUser) && !$authUser->isTeacher() && $authUser->isPaidUser() && count($selectedTimes) > 0)
-                        <button wire:click.prevent='handleBookNow()'
+                        <!-- <button wire:click.prevent='handleBookNow()'
                             class="btn btn-sm rounded bg-white text-primary border-primary mx-4 animate__animatedbook animate__heartBeat">
-                            <!-- <i class="fa-regular fa-calendar-days mx-2"></i> -->
-                            {{ trans('update.reschedule') }}</button>
+                            {{ trans('update.reschedule') }}</button> -->
+                        <a onclick='Livewire.emit("showLessonModal",$instructor->id)'
+                            class="btn btn-sm rounded bg-white text-primary border-primary mx-4 animate__animatedbook animate__heartBeat">
+                            {{ trans('update.reschedule') }}</a>
+                            
                     @else
                         <div>Choose a <span>date and time.</div>
                     @endif

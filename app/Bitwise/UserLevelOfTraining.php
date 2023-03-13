@@ -14,7 +14,6 @@ class UserLevelOfTraining extends Bitwise
         "beginner",
         "middle",
         "expert",
-
     ];
 
     static $levelOfTrainingValueByBit = [

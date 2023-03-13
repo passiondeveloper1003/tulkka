@@ -268,8 +268,6 @@ class Calendar extends Component
                 return;
             }
 
-
-
             $meetingStartForDB = $meetingTime->format("Y-m-d\TH:i:s");
             $meetingEndForDB = $meetingTime->addMinutes($this->lessonType)->format("Y-m-d\TH:i:s");
             $meetingTime = $meetingTime->setTimeZone($user->timezone ?? 'UTC')
@@ -308,8 +306,7 @@ class Calendar extends Component
             }
         }
     }
-
-
+    
     public function sendFeedback()
     {
         $feedback = [

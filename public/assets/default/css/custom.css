@@ -673,8 +673,9 @@
 .play-button-instructor {
   font-size: 20px;
   position: absolute;
-  top: 70px;
-  left: 140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 40px;
   height: 40px;
 }
@@ -921,14 +922,6 @@ html[lang="he"] .hero-section__second-title {
   }
   .instructor-about {
     font-size: 14px;
-  }
-  .play-button-instructor {
-    font-size: 20px;
-    position: absolute;
-    top: 50px;
-    left: 85px;
-    width: 40px;
-    height: 40px;
   }
   .instructor-thumb-img {
     width: 182px;
@@ -1471,6 +1464,53 @@ a.bg-hover-primary:hover {
   background: #ccc;
   border-radius: 10px;
 }
+
+/* Lesson Modal */
+.lesson-modal .modal-dialog {
+  max-width: 466px;
+}
+.lesson-content .custom-control-label {
+  padding: 11px 20px;
+  width: 100%;
+  padding-left: 40px;
+  border: 1px solid #b9b9b9;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+.lesson-content .custom-control-label:before {
+  top: 14px;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+}
+.lesson-content .custom-control-label:after {
+  top: 12px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+}
+.lesson-content .custom-control-input:checked ~ .custom-control-label,
+.lesson-content
+  .custom-control-input:not(:disabled):active
+  ~ .custom-control-label {
+  border-color: var(--primary) !important;
+}
+.max-h-100 {
+  max-height: 100% !important;
+}
+.overflow-y-auto {
+  overflow-y: auto !important;
+}
+#inputTypes::-webkit-scrollbar {
+  width: 0;
+}
+.btn-book {
+  min-width: 160px;
+  height: 24px;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 1rem;
+}
 @media (max-width: 1199px) {
   .video-modal .modal-content {
     width: calc(100% - 20px) !important;
@@ -1604,4 +1644,14 @@ a.bg-hover-primary:hover {
   .panel-content {
     padding: 20px 32px 20px 48px;
   }
+}
+
+.setting-tabs .active .settings-header-card {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.settings-biography textarea,
+.settings-biography input {
+  border: 1px solid #ccc;
 }

@@ -269,16 +269,16 @@
                         <a href="{{ url('/instructor-finder') }}"
                             @if (!isset($authUser)) href="{{ url('/login') }}" @endif
                             class="d-none d-lg-flex btn btn-sm btn-primary nav-start-a-live-btn text-nowrap">
-                            {{ trans('navbar.trial') }}
+                            {{ trans('navbar.book_lesson') }}
                         </a>
                     @endif
 
                     @if (isset($authUser) && !$authUser->trial_expired)
                         <a @if (!$authUser->isPaidUser() && !$authUser->isTeacher()) onclick='Livewire.emit("showModal","SomeData")'
-                      @else
+                    @else
                       href="{{ url('/instructor-finder') }}" @endif
                             class="d-none d-lg-flex btn btn-sm btn-primary nav-start-a-live-btn">
-                            {{ trans('navbar.book_lesson') }}
+                            {{ trans('navbar.trial') }}
                         </a>
                     @endif
                     @if (!empty($authUser))

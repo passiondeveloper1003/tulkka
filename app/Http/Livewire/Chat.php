@@ -24,7 +24,6 @@ class Chat extends Component
     public $chatfile;
     public $authUser;
 
-
     // get user unreaded messages
     public function mount($teacher = null)
     {
@@ -37,6 +36,7 @@ class Chat extends Component
         if ($user->role_name == 'user') {
             $this->students = User::with(['recievedMessages','sentMessages'])->where('role_name', 'teacher')
             ->get();
+            
         } else {
             $this->students = User::with(['recievedMessages','sentMessages'])->where('role_name', 'user')
             ->get();

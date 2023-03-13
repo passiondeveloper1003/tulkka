@@ -99,6 +99,7 @@
 </section>
 
 <div class="row mt-20 settings-bottom-sec">
+    @if (!$user->isTeacher())
     <div class="col-12 col-md-3">
         <div class="p-20 bg-white br-10 text-center settings-bottom-item">
             <h4 class="font-20 font-weight-normal">{{ trans('update.your_plan') }}</h4>
@@ -107,7 +108,12 @@
             <button class="btn btn-sm btn-outline-primary settings-btn mt-30">Change</button>
         </div>
     </div>
+    @endif
+    @if (!$user->isTeacher()) 
     <div class="col-12 col-md-3">
+    @else 
+    <div class="col-12 col-md-4">
+    @endif
         <div class="p-20 bg-white br-10 text-center settings-bottom-item">
             <h4 class="font-20 font-weight-normal">{{ trans('update.connect_calendar') }}</h4>
             <div class="mt-20 d-flex align-items-center font-14">
@@ -120,7 +126,11 @@
             </div>
         </div>
     </div>
+    @if (!$user->isTeacher()) 
     <div class="col-12 col-md-3">
+    @else 
+    <div class="col-12 col-md-4">
+    @endif
         <div class="p-20 bg-white br-10 text-center settings-bottom-item">
             <h4 class="font-20 font-weight-normal">{{ trans('update.receving_reminder') }}</h4>
             <div class="d-flex justify-content-between align-items-center custom-sm-switch mt-15">
@@ -153,7 +163,11 @@
             </div>
         </div>
     </div>
+    @if (!$user->isTeacher()) 
     <div class="col-12 col-md-3">
+    @else 
+    <div class="col-12 col-md-4">
+    @endif
         <div class="p-20 bg-white br-10 text-center settings-bottom-item">
             <h4 class="font-20 font-weight-normal">{{ trans('update.channels') }}</h4>
             <div class="d-flex justify-content-between align-items-center custom-sm-switch mt-15">

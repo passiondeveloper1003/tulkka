@@ -153,8 +153,8 @@
 </script>
 </a>
 
-
 @livewire('subscription-modal')
+@livewire('lesson-modal')
 @livewire('whats-goal-modal')
 @livewire('video-modal')
 

@@ -218,13 +218,13 @@
   .rtl & {
     .dropdown-menu {
       text-align: right;
-      left: 0;
-      right: auto;
+      // left: 0;
+      // right: auto;
 
-      &:after {
-        left: 15px;
-        right: auto;
-      }
+      // &:after {
+      //   left: 15px;
+      //   right: auto;
+      // }
 
       .flagstrap-icon {
         margin-right: initial !important;

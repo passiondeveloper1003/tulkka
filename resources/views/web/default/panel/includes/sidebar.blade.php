@@ -248,9 +248,11 @@
             <a href="/panel/homeworks" class="d-flex align-items-center">
                 <img class="mr-md-10" src="/assets/default/img/dashboard-icons/Vector-3.svg" alt="">
                 <span class="font-12 font-weight-500">{{ trans('sidebar.homeworks') }}</span>
-                <span class="counter-badge ml-2">
-                    {{ $authUser->receivedPendingHomeworks()->count() > 0 ? $authUser->receivedPendingHomeworks()->count() : 0 }}
-                </span>
+                @if($authUser->receivedPendingHomeworks()->count() > 0) 
+                    <span class="counter-badge ml-2">
+                        {{ $authUser->receivedPendingHomeworks()->count() }}
+                    </span>
+                @endif
             </a>
         </li>
         <li class="p-2 sidenav-item mt-2 mt-md-2 {{ request()->is('panel/quizes*') ? 'sidenav-item-active' : '' }}">
@@ -646,8 +648,6 @@
                 <span class="font-12 font-weight-500">{{ trans('sidebar.settings') }}</span>
             </a>
         </li>
-
-
 
         {{-- @if ($authUser->isTeacher() or $authUser->isOrganization())
             <li class="sidenav-item ">

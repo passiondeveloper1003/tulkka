@@ -1,6 +1,6 @@
 .panel-sidebar {
   position: fixed;
-  top: 105px;
+  top: 115px;
   left: 0;
   bottom: 0;
   width: 254px;
@@ -108,7 +108,7 @@
     padding-bottom: 35px;
 
     &.has-user-group {
-      height: calc(100% - 455px);
+      height: calc(100% - 310px);
     }
 
     &.without-bottom-image {
